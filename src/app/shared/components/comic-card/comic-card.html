@@ -1,0 +1,13 @@
+<article class="comic-card">
+  <a class="comic-card__imagen-enlace" [routerLink]="['/comic', comic.slug]" [attr.aria-label]="'Ver ' + comic.titulo">
+    <img class="comic-card__imagen" [src]="'/imagenes/' + comic.imagen" [alt]="comic.titulo" loading="lazy">
+  </a>
+  <div class="comic-card__contenido">
+    <span class="comic-card__categoria">{{ comic.categoria }}</span>
+    <h3>{{ comic.titulo }}</h3>
+    <p>{{ comic.descripcion }}</p>
+    <div class="comic-card__pie"><strong>{{ comic.precio }}</strong>
+      <a [routerLink]="['/comic', comic.slug]" (click)="seleccionar()">Ver cómic</a>
+    </div>
+  </div>
+</article>

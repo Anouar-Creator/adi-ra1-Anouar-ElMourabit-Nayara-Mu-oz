@@ -1,0 +1,69 @@
+<!-- Contenido principal que se muestra en esta página. -->
+<main class="acceso">
+    <div class="acceso__tarjeta">
+        <div class="acceso__marca"><img src="/imagenes/logo2.png" alt="Diary Fan"><span>Diary Fan</span></div>
+        <div class="acceso__pestañas" role="tablist"><a routerLink="/login" class="acceso__pestaña"
+                [class.acceso__pestaña--activa]="modo === 'login'">Iniciar sesión</a><a routerLink="/registro"
+                class="acceso__pestaña" [class.acceso__pestaña--activa]="modo === 'registro'">Registrarse</a></div>
+<!-- Formulario que recoge los datos introducidos por el usuario. -->
+        <form class="acceso__formulario" *ngIf="modo === 'login'" (ngSubmit)="iniciarSesion()"><label
+                class="acceso__etiqueta" for="login-email">Correo electrónico</label><input class="acceso__campo"
+                id="login-email" type="email" placeholder="tucorreo@ejemplo.com" required><label
+                class="acceso__etiqueta" for="login-password">Contraseña</label><input class="acceso__campo"
+                id="login-password" type="password" placeholder="••••••••" required><button type="submit"
+                class="acceso__boton">Entrar</button>
+<!-- Muestra este contenido solo cuando se cumple la condición. -->
+            <p class="acceso__mensaje" *ngIf="mensajeLogin">{{ mensajeLogin }}</p>
+            <p class="acceso__pie">¿Todavía no tienes cuenta? <a routerLink="/registro">Regístrate aquí</a></p>
+        </form>
+<!-- Formulario que recoge los datos introducidos por el usuario. -->
+        <form class="acceso__formulario" *ngIf="modo === 'registro'" [formGroup]="registroForm" (ngSubmit)="registrar()"
+            novalidate>
+            <label class="acceso__etiqueta" for="registro-nombre">Nombre completo</label><input class="acceso__campo"
+                [class.acceso__campo--error]="invalido('nombre')" id="registro-nombre" type="text"
+                formControlName="nombre" placeholder="Nombre y apellidos" autocomplete="name">
+<!-- Muestra este contenido solo cuando se cumple la condición. -->
+            <p class="acceso__error" *ngIf="invalido('nombre')">Escribe tu nombre (mínimo 3 caracteres).</p>
+            <label class="acceso__etiqueta" for="registro-email">Correo electrónico</label><input class="acceso__campo"
+                [class.acceso__campo--error]="invalido('email')" id="registro-email" type="email"
+                formControlName="email" placeholder="tucorreo@ejemplo.com">
+<!-- Muestra este contenido solo cuando se cumple la condición. -->
+            <p class="acceso__error" *ngIf="invalido('email')">Introduce un correo válido.</p>
+            <label class="acceso__etiqueta" for="registro-email-confirmar">Repite el correo electrónico</label><input
+                class="acceso__campo"
+                [class.acceso__campo--error]="invalido('confirmarEmail') || noCoinciden('emailsDistintos','confirmarEmail')"
+                id="registro-email-confirmar" type="email" formControlName="confirmarEmail"
+                placeholder="Repite tu correo">
+<!-- Muestra este contenido solo cuando se cumple la condición. -->
+            <p class="acceso__error" *ngIf="invalido('confirmarEmail')">Repite tu correo electrónico.</p>
+<!-- Muestra este contenido solo cuando se cumple la condición. -->
+            <p class="acceso__error" *ngIf="noCoinciden('emailsDistintos','confirmarEmail')">Los correos no coinciden.
+            </p>
+            <label class="acceso__etiqueta" for="registro-nacimiento">Fecha de nacimiento</label><input
+                class="acceso__campo" [class.acceso__campo--error]="invalido('fechaNacimiento')"
+                id="registro-nacimiento" type="date" formControlName="fechaNacimiento" [max]="hoy">
+<!-- Muestra este contenido solo cuando se cumple la condición. -->
+            <p class="acceso__error" *ngIf="invalido('fechaNacimiento')">Indica una fecha válida.</p>
+            <label class="acceso__etiqueta" for="registro-password">Contraseña</label><input class="acceso__campo"
+                [class.acceso__campo--error]="invalido('password')" id="registro-password" type="password"
+                formControlName="password" placeholder="Mínimo 8 caracteres">
+<!-- Muestra este contenido solo cuando se cumple la condición. -->
+            <p class="acceso__error" *ngIf="invalido('password')">La contraseña debe tener al menos 8 caracteres.</p>
+            <label class="acceso__etiqueta" for="registro-password-confirmar">Repite la contraseña</label><input
+                class="acceso__campo"
+                [class.acceso__campo--error]="invalido('confirmarPassword') || noCoinciden('passwordsDistintas','confirmarPassword')"
+                id="registro-password-confirmar" type="password" formControlName="confirmarPassword"
+                placeholder="Repite la contraseña">
+<!-- Muestra este contenido solo cuando se cumple la condición. -->
+            <p class="acceso__error" *ngIf="invalido('confirmarPassword')">Repite tu contraseña.</p>
+<!-- Muestra este contenido solo cuando se cumple la condición. -->
+            <p class="acceso__error" *ngIf="noCoinciden('passwordsDistintas','confirmarPassword')">Las contraseñas no
+                coinciden.</p>
+            <button type="submit" class="acceso__boton">Crear cuenta</button>
+<!-- Muestra este contenido solo cuando se cumple la condición. -->
+            <p class="acceso__mensaje" *ngIf="registroValidado">Datos validados correctamente. La conexión para guardar
+                cuentas está pendiente.</p>
+            <p class="acceso__pie">¿Ya tienes cuenta? <a routerLink="/login">Inicia sesión</a></p>
+        </form>
+    </div>
+</main>

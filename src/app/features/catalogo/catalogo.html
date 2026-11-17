@@ -1,0 +1,17 @@
+<app-page-banner titulo="Nuestro catálogo" subtitulo="Encuentra tu próxima lectura"
+    descripcion="Historias para todos los gustos, desde superhéroes hasta humor." />
+<section class="contenido-pagina">
+
+    <div class="buscador">
+        <label for="buscar-comic">Buscar por título o categoría</label>
+        <input id="buscar-comic" type="search" [(ngModel)]="busqueda" placeholder="Ej. Spider-Man, humor...">
+            
+            <span>{{ comics.length }}cómics</span>
+    </div>
+
+<!-- se repite este bloque para mostrar los elementos de una lista. -->
+    <div class="rejilla-comics"><app-comic-card *ngFor="let comic of comics" [comic]="comic"
+            (seleccionado)="comicSeleccionado($event)"></app-comic-card></div>
+<!-- se muestra este contenido solo cuando se cumple la condición. -->
+    <p class="sin-resultados" *ngIf="comics.length === 0">No se han encontrado cómics con esa búsqueda.</p>
+</section>

@@ -1,0 +1,130 @@
+.acceso {
+    display: flex;
+    justify-content: center;
+    padding: 45px 16px 65px;
+    background: linear-gradient(135deg, #f0e8dd, #faf8f5);
+    min-height: 570px;
+    color: #292522
+}
+
+.acceso__tarjeta {
+    width: 100%;
+    max-width: 450px;
+    background: #fff;
+    border: 1px solid #e5ddd2;
+    border-radius: 12px;
+    padding: 18px 22px 22px;
+    box-shadow: 0 10px 30px #33251a12
+}
+
+.acceso__marca {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font: 700 25px Georgia, serif;
+    margin: 4px 0 15px
+}
+
+.acceso__marca img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain
+}
+
+.acceso__pestañas {
+    display: flex;
+    gap: 5px;
+    padding: 6px;
+    background: #f4eee7;
+    border-radius: 8px
+}
+
+.acceso__pestaña {
+    flex: 1;
+    text-align: center;
+    text-decoration: none;
+    color: #655b51;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 700
+}
+
+.acceso__pestaña--activa {
+    background: #292522;
+    color: #fff
+}
+
+.acceso__formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    padding: 18px 5px 5px
+}
+
+.acceso__etiqueta {
+    font-size: 12px;
+    font-weight: 700;
+    margin-top: 7px
+}
+
+.acceso__campo {
+    padding: 11px 12px;
+    border: 1px solid #d8cec2;
+    border-radius: 6px;
+    font-size: 13px
+}
+
+.acceso__campo:focus {
+    outline: 2px solid #e7b18f;
+    border-color: #a64b2a
+}
+
+.acceso__campo--error {
+    border-color: #b3261e
+}
+
+.acceso__error {
+    color: #b3261e;
+    font-size: 11px;
+    margin: 0
+}
+
+.acceso__boton {
+    background: #292522;
+    color: #fff;
+    border: 0;
+    border-radius: 6px;
+    padding: 12px;
+    margin-top: 14px;
+    font-weight: 700;
+    cursor: pointer
+}
+
+.acceso__boton:hover {
+    background: #a64b2a
+}
+
+.acceso__mensaje {
+    font-size: 12px;
+    color: #38734b;
+    background: #eef6ee;
+    padding: 10px;
+    border-radius: 6px
+}
+
+.acceso__pie {
+    text-align: center;
+    font-size: 12px;
+    color: #655b51
+}
+
+.acceso__pie a {
+    color: #a64b2a;
+    font-weight: 700
+}
+
+.acceso__formulario:has(#registro-nombre) {
+    max-height: none
+}

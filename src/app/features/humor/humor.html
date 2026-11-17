@@ -1,0 +1,8 @@
+<app-page-banner titulo="Humor" subtitulo="Una buena historia también te hace reír"
+    descripcion="Cómics y novelas gráficas para disfrutar de un rato divertido." />
+<section class="contenido-pagina">
+    <p class="introduccion">Una selección de historias con personajes inolvidables y situaciones disparatadas.</p>
+<!-- Repite este bloque para mostrar los elementos de una lista. -->
+    <div class="rejilla-comics"><app-comic-card *ngFor="let comic of comics" [comic]="comic"
+            (seleccionado)="comicSeleccionado($event)"></app-comic-card></div>
+</section>

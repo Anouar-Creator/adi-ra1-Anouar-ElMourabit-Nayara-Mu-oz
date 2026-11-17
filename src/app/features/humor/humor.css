@@ -1,0 +1,29 @@
+.contenido-pagina {
+    max-width: 1180px;
+    margin: auto;
+    padding: 42px 24px 60px
+}
+
+.introduccion {
+    color: #655d55;
+    margin: 0 0 25px;
+    line-height: 1.6
+}
+
+.rejilla-comics {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px
+}
+
+@media(max-width:900px) {
+    .rejilla-comics {
+        grid-template-columns: repeat(2, minmax(0, 1fr))
+    }
+}
+
+@media(max-width:560px) {
+    .rejilla-comics {
+        grid-template-columns: 1fr
+    }
+}

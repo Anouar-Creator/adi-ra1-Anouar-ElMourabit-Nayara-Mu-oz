@@ -1,0 +1,29 @@
+<ng-container *ngIf="comic; else noEncontrado"><app-page-banner titulo="Ficha del cómic"
+        subtitulo="Diary Fan · Catálogo" [descripcion]="comic.titulo" />
+    <section class="detalle"><img [src]="'/imagenes/' + comic.imagen" [alt]="comic.titulo">
+        <div class="detalle__info"><span class="categoria">{{ comic.categoria }}</span>
+            <h1>{{ comic.titulo }}</h1><app-price-label [precio]="comic.precio" />
+            <p class="sinopsis">{{ comic.sinopsis }}</p>
+            <h2>Más información</h2>
+            <dl>
+                <dt>Editorial original</dt>
+                <dd>{{ comic.editorial }}</dd>
+                <dt>Autor/es y dibujantes</dt>
+                <dd>{{ comic.autores }}</dd>
+                <dt>Idioma</dt>
+                <dd>Español</dd>
+                <dt>Páginas</dt>
+                <dd>{{ comic.paginas ? comic.paginas : 'No especificado' }}</dd>
+                <dt>Interior</dt>
+                <dd>Color</dd>
+            </dl><button type="button" class="boton-carrito" (click)="mostrarAviso()">Añadir al carrito</button>
+<!-- muestra el contenido solo cuando se cumple la condición -->
+            <p class="aviso" *ngIf="alertaCompra">La tienda es una demostración: el carrito todavía no está conectado.
+            </p><a routerLink="/catalogo" class="volver">← Volver al catálogo</a>
+        </div>
+    </section>
+</ng-container><ng-template #noEncontrado>
+    <section class="no-encontrado">
+        <h1>No encontramos ese cómic</h1><a routerLink="/catalogo">Volver al catálogo</a>
+    </section>
+</ng-template>

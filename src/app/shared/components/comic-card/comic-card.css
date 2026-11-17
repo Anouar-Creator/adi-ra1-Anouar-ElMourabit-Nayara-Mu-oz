@@ -1,0 +1,78 @@
+.comic-card {
+    background: #fff;
+    border: 1px solid #e6dfd4;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 3px 12px #21180d0b;
+    transition: transform .2s, box-shadow .2s
+}
+
+.comic-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 9px 22px #21180d18
+}
+
+.comic-card__imagen-enlace {
+    height: 230px;
+    background: #f2eee7;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.comic-card__imagen {
+    width: 100%;
+    height: 100%;
+    object-fit: contain
+}
+
+.comic-card__contenido {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    flex: 1
+}
+
+.comic-card__categoria {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #a64b2a;
+    font-weight: 700
+}
+
+.comic-card h3 {
+    font-family: Georgia, serif;
+    font-size: 19px;
+    margin: 8px 0
+}
+
+.comic-card p {
+    font-size: 13px;
+    color: #625d56;
+    line-height: 1.5;
+    margin: 0 0 16px;
+    flex: 1
+}
+
+.comic-card__pie {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px
+}
+
+.comic-card__pie strong {
+    color: #a64b2a
+}
+
+.comic-card__pie a {
+    background: #292522;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 12px
+}

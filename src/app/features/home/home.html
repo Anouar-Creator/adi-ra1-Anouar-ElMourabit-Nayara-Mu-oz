@@ -1,0 +1,32 @@
+<section class="portada-home">
+  <div class="portada-home__texto"><span class="etiqueta">Tu tienda de historias</span>
+    <h1>Un universo de cómics<br><em>por descubrir</em></h1>
+    <p>Superhéroes, humor, ciencia ficción y muchas aventuras. Encuentra tu próxima lectura favorita en Diary Fan.</p><a
+      routerLink="/catalogo" class="boton boton--claro">Explorar cómics</a>
+  </div>
+  <img src="/imagenes/logo.png" alt="Diary Fan" class="portada-home__logo">
+</section>
+<section class="seccion-contenido">
+  <div class="titulo-seccion">
+    <div><span class="etiqueta">Recién llegados</span>
+      <h2>Novedades</h2>
+    </div><a routerLink="/catalogo">Ver todo el catálogo →</a>
+  </div>
+
+<!-- repite este bloque para mostrar los elementos de una lista. -->
+  <div class="rejilla-comics">
+    <app-comic-card *ngFor="let comic of novedades" [comic]="comic"
+      (seleccionado)="comicSeleccionado($event)">
+    </app-comic-card>
+  </div>
+  
+</section>
+<section class="bloque-categorias">
+  <div><span class="etiqueta">Encuentra tu género</span>
+    <h2>¿Qué te apetece leer hoy?</h2>
+    <p>Desde las aventuras de los superhéroes hasta las historias más divertidas.</p>
+  </div>
+  <div class="categorias-home"><a routerLink="/humor">Humor <span>↗</span></a><a routerLink="/catalogo">Ciencia ficción
+      <span>↗</span></a><a routerLink="/catalogo">Superhéroes <span>↗</span></a><a routerLink="/catalogo">Drama
+      <span>↗</span></a></div>
+</section>

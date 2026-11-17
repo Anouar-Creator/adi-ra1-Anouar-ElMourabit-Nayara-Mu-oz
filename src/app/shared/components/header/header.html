@@ -1,0 +1,18 @@
+<!-- Cabecera de la página y sus elementos de navegación. -->
+<header class="cabecera">
+    <div class="cabecera__fila"><a routerLink="/home" class="cabecera__marca"><img src="/imagenes/logo.png"
+                alt="Diary Fan" class="cabecera__logo"><span class="cabecera__titulo">Diary Fan</span></a>
+        <input type="checkbox" id="cabecera-toggle" class="cabecera__toggle-input"><label for="cabecera-toggle"
+            class="cabecera__toggle-boton" aria-label="Abrir menú"><span></span><span></span><span></span></label>
+<!-- Menú para navegar entre las distintas páginas. -->
+        <nav class="cabecera__nav" aria-label="Navegación principal"><a routerLink="/home"
+                routerLinkActive="cabecera__enlace--activo" [routerLinkActiveOptions]="{exact:true}"
+                class="cabecera__enlace">Inicio</a><a routerLink="/catalogo" routerLinkActive="cabecera__enlace--activo"
+                class="cabecera__enlace">Catálogo</a><a routerLink="/humor" routerLinkActive="cabecera__enlace--activo"
+                class="cabecera__enlace">Humor</a><a routerLink="/quienes-somos"
+                routerLinkActive="cabecera__enlace--activo" class="cabecera__enlace">Quiénes somos</a><a
+                routerLink="/contactos" routerLinkActive="cabecera__enlace--activo"
+                class="cabecera__enlace">Contactos</a><a routerLink="/login" routerLinkActive="cabecera__enlace--activo"
+                class="cabecera__enlace cabecera__acceso">Iniciar sesión</a></nav>
+    </div>
+</header>

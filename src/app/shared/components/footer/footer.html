@@ -1,0 +1,22 @@
+<!-- Pie de página con información y enlaces  -->
+<footer class="pie">
+    <div class="pie__contenido">
+        <div class="pie__marca"><img src="/imagenes/logo2.png" alt="Diary Fan">
+            <div><strong>Diary Fan</strong>
+                <p>Un universo de cómics por descubrir.</p>
+            </div>
+        </div>
+        <div>
+            <h3>Explora</h3><a routerLink="/catalogo">Catálogo</a><a routerLink="/humor">Humor</a><a
+                routerLink="/quienes-somos">Quiénes somos</a>
+        </div>
+        <div>
+            <h3>Ayuda</h3><a routerLink="/contactos">Contactos</a><a routerLink="/login">Iniciar sesión</a><a
+                routerLink="/registro">Crear una cuenta</a>
+        </div>
+        <div>
+            <h3>Síguenos</h3><app-social-links [compacto]="true"></app-social-links>
+        </div>
+    </div>
+    <div class="pie__inferior">© 2026 Diary Fan · Proyecto de Anouar y Nayara</div>
+</footer>

@@ -1,0 +1,22 @@
+<app-page-banner titulo="Contáctanos" subtitulo="Estamos para ayudarte"
+    descripcion="¿Tienes alguna duda sobre la página o nuestros cómics? Escríbenos." />
+<section class="contacto-pagina">
+    <div class="contacto-texto"><span class="etiqueta">Servicio de atención</span>
+        <h2>Cuéntanos qué necesitas</h2>
+        <p>Desde aquí podrás contactar con el servicio técnico de la página o comunicar cualquier duda que tengas. Al
+            utilizar este medio de contacto, te pedimos que respetes las normas de lenguaje.</p>
+        <div class="dato-contacto"><strong>Diary Fan</strong><span>Atención al lector y consultas generales</span><a
+                href="mailto:contacto@diaryfan.com">contacto&#64;diaryfan.com</a></div>
+    </div>
+<!-- Formulario que recoge los datos introducidos por el usuario. -->
+    <form class="form-contacto" (ngSubmit)="enviar()" #form="ngForm"><label for="nombre">Nombre</label><input
+            id="nombre" name="nombre" [(ngModel)]="nombre" required placeholder="Tu nombre"><label for="correo">Correo
+            electrónico</label><input id="correo" name="correo" type="email" [(ngModel)]="correo" required email
+            placeholder="tu@email.com"><label for="mensaje">Mensaje</label><textarea id="mensaje" name="mensaje"
+            [(ngModel)]="mensaje" required rows="6" placeholder="Escribe tu mensaje..."></textarea><button type="submit"
+            [disabled]="form.invalid">Enviar mensaje</button>
+<!-- Muestra este contenido solo cuando se cumple la condición. -->
+        <p class="confirmacion" *ngIf="enviado">El mensaje se ha validado. Para enviarlo realmente hace falta conectar
+            un servicio de correo o un backend.</p>
+    </form>
+</section>

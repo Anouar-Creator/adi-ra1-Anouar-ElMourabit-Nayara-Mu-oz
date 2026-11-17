@@ -1,0 +1,114 @@
+.cabecera {
+    background: #fff;
+    border-bottom: 1px solid #e5ddd2;
+    font-family: Arial, sans-serif;
+    position: sticky;
+    top: 0;
+    z-index: 10
+}
+
+.cabecera__fila {
+    max-width: 1220px;
+    margin: auto;
+    padding: 10px 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px
+}
+
+.cabecera__marca {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    text-decoration: none;
+    color: #292522
+}
+
+.cabecera__logo {
+    width: 48px;
+    height: 48px;
+    object-fit: contain
+}
+
+.cabecera__titulo {
+    font: 700 25px Georgia, serif;
+    letter-spacing: -.5px
+}
+
+.cabecera__nav {
+    display: flex;
+    align-items: center;
+    gap: 5px
+}
+
+.cabecera__enlace {
+    padding: 10px 12px;
+    text-decoration: none;
+    color: #39332e;
+    font-size: 13px;
+    border-radius: 5px
+}
+
+.cabecera__enlace:hover,
+.cabecera__enlace--activo {
+    background: #f1e6dc;
+    color: #a64b2a
+}
+
+.cabecera__acceso {
+    background: #292522;
+    color: #fff;
+    margin-left: 8px
+}
+
+.cabecera__acceso:hover {
+    background: #a64b2a;
+    color: #fff
+}
+
+.cabecera__toggle-input,
+.cabecera__toggle-boton {
+    display: none
+}
+
+@media(max-width:800px) {
+    .cabecera__toggle-boton {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        padding: 8px;
+        cursor: pointer
+    }
+
+    .cabecera__toggle-boton span {
+        width: 23px;
+        height: 2px;
+        background: #292522
+    }
+
+    .cabecera__nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #fff;
+        border-bottom: 1px solid #e5ddd2;
+        padding: 12px;
+        flex-direction: column;
+        align-items: stretch
+    }
+
+    .cabecera__toggle-input:checked~.cabecera__nav {
+        display: flex
+    }
+
+    .cabecera__enlace {
+        text-align: center
+    }
+
+    .cabecera__acceso {
+        margin: 4px 0 0
+    }
+}

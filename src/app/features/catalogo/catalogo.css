@@ -1,0 +1,56 @@
+.contenido-pagina {
+    max-width: 1180px;
+    margin: auto;
+    padding: 42px 24px 60px
+}
+
+.buscador {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 26px;
+    flex-wrap: wrap
+}
+
+.buscador label {
+    font-weight: 700;
+    font-size: 13px
+}
+
+.buscador input {
+    flex: 1;
+    min-width: 220px;
+    border: 1px solid #d8cec2;
+    border-radius: 6px;
+    padding: 12px;
+    font: inherit
+}
+
+.buscador span {
+    font-size: 12px;
+    color: #766b60
+}
+
+.rejilla-comics {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px
+}
+
+.sin-resultados {
+    padding: 35px;
+    text-align: center;
+    color: #766b60
+}
+
+@media(max-width:900px) {
+    .rejilla-comics {
+        grid-template-columns: repeat(2, minmax(0, 1fr))
+    }
+}
+
+@media(max-width:560px) {
+    .rejilla-comics {
+        grid-template-columns: 1fr
+    }
+}
